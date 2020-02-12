@@ -4,6 +4,8 @@
 
 using std::string;
 using std::ostream;
+using std::cout;
+using std::endl;
 
 /*
  * Constructor that initializes the name of the item,
@@ -21,7 +23,11 @@ Inventory::Inventory(string name, float price, int count)
  */
 void Inventory::sell()
 {
-  :m_in_stock--;
+  if (m_in_stock <= 0) {
+	  cout << "Sorry, that item is out of stock" << endl;
+  } else {
+	m_in_stock--;
+  }
 }
 
 /*
